@@ -61,18 +61,19 @@ app.get("/", (req, res) => {
 
 app.all("/down", async (req, res) => {
     const browserStartAttempts = 5;
+    let a;
     for (let i = 0; i < browserStartAttempts; i++) {
         try {
             const { url } = req.query;
             if (!url) return res.json({ error: "invalid url/nourl" })
             return res.json(await main(url))
         } catch (e) {
-
+            a = e
             console.log(e)
             // return res.json(e)
         }
     }
-    return res.json({error: "TIMEOUT"})
+    return res.json({error: e})
 
 })
 app.use(express.static(path.join(__dirname, 'output')));
