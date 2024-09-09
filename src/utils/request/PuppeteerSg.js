@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer'
-
+import { executablePath } from 'puppeteer';
 class PuppeteerSg {
   constructor() {
     if (!PuppeteerSg.instance) {
@@ -18,7 +18,8 @@ class PuppeteerSg {
     this.browser = await puppeteer.launch({
       headless: "new",
       defaultViewport: null,
-      args: ["--no-sandbox"]
+      args: ["--no-sandbox"],
+      executablePath: executablePath()
     });
   }
 
