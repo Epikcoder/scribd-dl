@@ -65,7 +65,7 @@ app.all("/down", async(req,res) => {
     if(!url) return res.json({error: "invalid url/nourl"})
     return res.json(await main(url))
 }catch(e) {
-    return res.json(e)
+    return res.send(e)
 }
 })
 app.use(express.static(path.join(__dirname, 'output')));
