@@ -20,12 +20,11 @@ RUN apk add --no-cache \
     pango-dev \
     cairo-dev \
     imagemagick \
-    libssl1.1 \
+    libssl3 \
     giflib-dev \
     librsvg-dev \
     cairo \
     pango
-
 # Install npm dependencies
 RUN npm install
 
