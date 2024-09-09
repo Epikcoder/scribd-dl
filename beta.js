@@ -66,7 +66,7 @@ app.all("/down", async(req,res) => {
     return res.json(await main(url))
 }catch(e) {
     console.log(e)
-    return res.send(e)
+    return res.json(e)
 }
 })
 app.use(express.static(path.join(__dirname, 'output')));

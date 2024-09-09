@@ -24,7 +24,15 @@ RUN apk add --no-cache \
     giflib-dev \
     librsvg-dev \
     cairo \
-    pango
+    pango \
+    chromium \
+    nss \
+    freetype \
+    harfbuzz \
+    ttf-freefont
+
+# Set environment variable for Puppeteer
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
 # Install npm dependencies
 RUN npm install
