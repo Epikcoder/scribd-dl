@@ -74,7 +74,7 @@ app.all("/down", async (req, res) => {
         }
     }
     
-    return res.json({error: e})
+    return res.json({error: a})
 
 })
 app.use(express.static(path.join(__dirname, 'output')));
