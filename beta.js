@@ -45,7 +45,7 @@ async function main(url) {
             if(error.toString().includes("Unsupported UR")) {
                 reject({error: "Not supported URL"})
             }else{
-                reject({error: error})
+                reject({error: JSON.stringify(error, "", "  ")})
             }
         }
     })
