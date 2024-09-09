@@ -15,14 +15,15 @@ class PuppeteerSg {
    * Launch a browser
    */
   async launch() {
-    console.log("EXECUTE" +  executablePath())
+    // console.log("EXECUTE" +  executablePath())
     this.browser = await puppeteer.launch({
       headless: "new",
       defaultViewport: null,
-      args: ["--no-sandbox"],
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
       executablePath: executablePath()
     });
   }
+  
 
   /**
    * New a page
