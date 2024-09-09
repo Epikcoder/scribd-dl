@@ -1,4 +1,5 @@
-FROM node:20-alpine
+FROM node:hydrogen-alpine3.20
+
 
 # Set the working directory
 WORKDIR /app
