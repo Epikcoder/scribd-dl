@@ -65,6 +65,7 @@ app.all("/down", async(req,res) => {
     if(!url) return res.json({error: "invalid url/nourl"})
     return res.json(await main(url))
 }catch(e) {
+    console.log(e)
     return res.send(e)
 }
 })
