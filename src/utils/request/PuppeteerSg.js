@@ -15,6 +15,7 @@ class PuppeteerSg {
    * Launch a browser
    */
   async launch() {
+    console.log("EXECUTE" +  executablePath())
     this.browser = await puppeteer.launch({
       headless: "new",
       defaultViewport: null,
