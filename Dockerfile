@@ -16,8 +16,7 @@ RUN apt-get update && apt-get install -y \
     fonts-noto \
     fonts-noto-cjk \
     fonts-noto-extra \
-    gcompat \
-    libstdc++ \
+    libstdc++6 \
     libuuid1 \
     libvips-dev \
     build-essential \
