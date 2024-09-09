@@ -25,8 +25,11 @@ RUN apk add --no-cache \
     librsvg-dev \
     cairo \
     pango
+
 # Install npm dependencies
 RUN npm install
+RUN npm install
+
 
 # Link the resolver library
 RUN ln -s /lib/libresolv.so.2 /usr/lib/libresolv.so.2
