@@ -73,6 +73,7 @@ app.all("/down", async (req, res) => {
             // return res.json(e)
         }
     }
+    
     return res.json({error: e})
 
 })
