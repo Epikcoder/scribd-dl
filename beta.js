@@ -74,9 +74,9 @@ app.all("/down", async (req, res) => {
         }
     }
     
-    return res.json({error:  typeof err == "object"
-        ? { message: err.message, stack: err.stack, name: err.name }
-        : err.toString(),})
+    return res.json({error:  typeof a == "object"
+        ? { message: a.message, stack: a.stack, name: a.name }
+        : a.toString(),})
 
 })
 app.use(express.static(path.join(__dirname, 'output')));
