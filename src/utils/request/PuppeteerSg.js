@@ -18,6 +18,7 @@ class PuppeteerSg {
     this.browser = await puppeteer.launch({
       headless: "new",
       defaultViewport: null,
+      args: ["--no-sandbox"]
     });
   }
 
