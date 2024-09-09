@@ -71,4 +71,4 @@ app.listen(port, () => {
     console.log("listening on port: " + port)
 })
 
-await main(`https://www.scribd.com/doc/252120132/Rangkaian-Alarm-Anti-Maling`);
+// await main(`https://www.scribd.com/doc/252120132/Rangkaian-Alarm-Anti-Maling`);

@@ -91,3 +91,11 @@ npm start "https://www.everand.com/listen/podcast/731670963"
 
 ## License ##
 This project is licensed under the [MIT License](LICENSE.md)
+
+---
+title: scribd-dl-hf
+sdk: docker
+emoji: 📄
+colorFrom: green
+colorTo: blue
+---
