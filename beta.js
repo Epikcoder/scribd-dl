@@ -60,9 +60,13 @@ app.get("/", (req, res) => {
 })
 
 app.all("/down", async(req,res) => {
+    try{
     const {url} = req.query;
     if(!url) return res.json({error: "invalid url/nourl"})
     return res.json(await main(url))
+}catch(e) {
+    return res.json(export)
+}
 })
 app.use(express.static(path.join(__dirname, 'output')));
 
