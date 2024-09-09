@@ -43,9 +43,9 @@ async function main(url) {
             resolve(checkIfGenerated(output));
         } catch (error) {
             if (error.toString().includes("Unsupported UR")) {
-                reject({ error: "Not supported URL" })
+                reject({result: false, error: "Not supported URL" })
             } else {
-                reject({ error: error })
+                reject({result: false, error: error })
             }
         }
     })
@@ -65,7 +65,7 @@ app.all("/down", async (req, res) => {
     for (let i = 0; i < browserStartAttempts; i++) {
         try {
             const { url } = req.query;
-            if (!url) return res.json({ error: "invalid url/nourl" })
+            if (!url) return res.json({ result: false, error: "invalid url/nourl" })
             return res.json(await main(url))
         } catch (e) {
             a = e
@@ -74,7 +74,7 @@ app.all("/down", async (req, res) => {
         }
     }
     
-    return res.json({error:  typeof a == "object"
+    return res.json({result: false, error:  typeof a == "object"
         ? { message: a.message, stack: a.stack, name: a.name }
         : a.toString(),})
 
