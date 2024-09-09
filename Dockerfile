@@ -7,7 +7,7 @@ WORKDIR /app
 ADD . /app
 
 # Install necessary packages
-RUN apk add --no-cache \
+RUN apk --update --upgrade add --no-cache \
     font-noto \
     font-noto-cjk \
     font-noto-extra \
@@ -31,10 +31,8 @@ RUN apk add --no-cache \
     harfbuzz \
     ttf-freefont
 
-# Set environment variable for Puppeteer
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
-# Install npm dependencies
 RUN npm install
 RUN npm install
 
