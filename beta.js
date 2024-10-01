@@ -73,7 +73,7 @@ app.all("/down", async (req, res) => {
             // return res.json(e)
         }
     }
-    
+
     return res.json({result: false, error:  typeof a == "object"
         ? { message: a.message, stack: a.stack, name: a.name }
         : a.toString(),})
